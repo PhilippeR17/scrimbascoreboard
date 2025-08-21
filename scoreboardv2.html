@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Basket Scoreboard">
+  <link rel="stylesheet" href="src/css/index2.css">
+  <title>Basketball Scoreboard</title>
+</head>
+<body>
+<main>
+  <!-- Scoreboard has fixed dimensions. In theory, text-align center should suffice,
+  no need for flexbox -->
+  <div id="scoreboard">
+    <div id="game-specs">
+      <div class="input-row">
+        <label for="game-quarters"># Quarters:</label>
+        <input type="number" id="game-quarters" min="2" max="4" step="1" value="2">
+      </div>
+
+      <div class="input-row">
+        <label for="game-duration">Quarter Duration (seconds):</label>
+        <input type="number" id="game-duration" min="15" max="600" step="1" value="15">
+      </div>
+      <div class="input-row">
+        <label for="game-timeout">Time out between quarters (seconds):</label>
+        <input type="number" id="game-timeout" min="5" max="30" step="1" value="10">
+      </div>
+    </div>
+    <hr class="divider" />
+    <!-- First row: timer and quarter. Needs flexbox -->
+    <div id="scoreboard-header">
+      <p id="clock">1:49</p>
+      <p id="quarter">Q2</p>
+    </div>
+    <p id="result">AWAITING RESULT</p>
+    <!-- Second row: team name, score and increment buttons. Needs flexbox -->
+    <div id="teams-ctr">
+      <!-- Each team container should be flexbox column, with justify and align both centered -->
+      <div class="team">
+        <h3 id="home-title">Home</h3>
+        <p class="score" id="home-score">22</p>
+        <div class="inc-score">
+          <button id="home-1">+1</button>
+          <button id="home-2">+2</button>
+          <button id="home-3">+3</button>
+        </div>
+        <h4 class="fouls-heading">Fouls</h4>
+        <p class="fouls" id="home-fouls">2</p>
+      </div>
+      <div class="team">
+        <h3 id="guest-title">Guest</h3>
+        <p class="score" id="guest-score">14</p>
+        <div class="inc-score">
+          <button id="guest-1">+1</button>
+          <button id="guest-2">+2</button>
+          <button id="guest-3">+3</button>
+        </div>
+        <h4 class="fouls-heading">Fouls</h4>
+        <p class="fouls" id="guest-fouls">3</p>
+      </div>
+
+    </div>
+    <p id="paused">Game paused for <span id="pause-duration"></span> seconds</p>
+    <p id="error"></p>
+    <hr class="divider">
+    <!-- Third row: Start new game -->
+    <button id="new-game">New Game</button>
+  </div>
+</main>
+<script src="src/js/index2.js"></script>
+</body>
+</html>

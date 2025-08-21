@@ -1,0 +1,192 @@
+@font-face {
+  font-family: Scoreboard;
+  src: url("../../assets/fonts/CursedTimerUlil-Aznm.ttf");
+}
+
+html, h1, h2, h3, h4, p {
+  font-family: Scoreboard, sans-serif;
+  font-size: 16px;
+  margin: 0;
+}
+
+#scoreboard {
+  background-color: #1b244a;
+  margin: 30px auto;
+  width: 600px;
+  padding: 50px 0;
+  /*height: 400px;*/
+  color: white;
+  text-align: center;
+}
+
+#game-specs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+}
+
+.input-row {
+  width: 65%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.input-row label {
+  width: 80%;
+  text-align: left;
+}
+
+#scoreboard-header  {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+#clock, #quarter {
+  background-color: #080001;
+  font-family: Scoreboard, serif;
+  font-size: 3.5rem;
+  color: darkseagreen;
+  padding: 10px;
+}
+
+#quarter {
+  margin-left: 40px;
+}
+
+#teams-ctr {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+}
+
+.team h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.8rem;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.score {
+  background-color: #080001;
+  color: #f94f6d;
+  font-size: 5rem;
+  width: 160px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.inc-score {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.inc-score button {
+  font-size: 1.2rem;
+  padding: 3px;
+  border: #9aabd8 3px solid;
+  background-color: transparent;
+  color: #9aabd8;
+  border-radius: 5px;
+  margin: 0 7px;
+  width: 45px;
+  height: 45px;
+}
+
+.fouls-heading {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.fouls {
+  background-color: #080001;
+  color: #f94f6d;
+  font-size: 3rem;
+  padding: 5px 0;
+}
+
+.divider {
+  margin-top: 50px;
+  width: 80%;
+  height: 2px;
+  background-color: #f94f6d;
+  border: none;
+}
+
+#new-game {
+  margin-top: 20px;
+  background: linear-gradient(gold, white);
+  padding: 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: olivedrab;
+  border: 2px solid #f94f6d;
+  border-radius: 10px;
+}
+
+#paused {
+  margin-top: 30px;
+  display: none;
+  color: white;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.8rem;
+}
+
+#paused.show {
+  display: block !important;
+}
+
+#paused span {
+  background-color: #080001;
+  color: #f94f6d;
+  font-family: Scoreboard, serif;
+  font-size: 1.8rem;
+  padding: 10px;
+}
+
+#error {
+  margin-top: 20px;
+  display: none;
+  color: red;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.8rem;
+}
+
+#result {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding: 10px 15px  ;
+  display: inline-flex;
+  background-color: #080001;
+  visibility: hidden;
+}
+
+#result.has-winner {
+  color: darkseagreen;
+  visibility: visible;
+}
+
+#result.no-winner {
+  color: #f94f6d;
+  visibility: visible;
+}
+
+.is-winner {
+  color: darkseagreen;
+}
