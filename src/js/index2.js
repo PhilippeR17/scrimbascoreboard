@@ -139,6 +139,9 @@ class GameModel {
         this.subscribers[event].push(callback);
     }
 
+    clearEventRegistry() {
+        this.subscribers = {};
+    }
     /**
      * Fire events to inform the controller that some internal state has changed,
      * warranting an action on the part of the controller
@@ -349,6 +352,7 @@ class GameController {
      * Callback for the gameStarted event
      */
     gameStartedHandler() {
+        console.log("gameStarted event");
         this.initView();
     }
 
@@ -439,6 +443,14 @@ class GameController {
      *      - Tell the Model OK to start game
      */
     startGame() {
+        console.log("New Game button clicked");
+        if (this.model) {
+            this.model.clearEventRegistry();
+        }
+        this.model = null;
+        this.view = null;
+        clearInterval(this.timerInterval);
+        this.timerInterval = null;
         this.model = new GameModel(this.getGameSpecs());
         this.view = new GameView();
         this.subscribeToModelEvents();
