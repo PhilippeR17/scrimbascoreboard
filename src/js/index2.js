@@ -352,7 +352,6 @@ class GameController {
      * Callback for the gameStarted event
      */
     gameStartedHandler() {
-        console.log("gameStarted event");
         this.initView();
     }
 
@@ -443,7 +442,6 @@ class GameController {
      *      - Tell the Model OK to start game
      */
     startGame() {
-        console.log("New Game button clicked");
         if (this.model) {
             this.model.clearEventRegistry();
         }
